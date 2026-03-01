@@ -40,13 +40,16 @@ export function HeroSection() {
             Booking flights. Executing trades. Signing contracts. All on behalf of humans.
           </p>
           
-          <div className="bg-white/80 backdrop-blur-sm border border-x8-border p-6 mb-10 max-w-2xl">
-            <p className="text-lg text-x8-dark leading-relaxed">
-              <span className="text-x8-gold font-semibold">X8 Identity</span> ensures every AI action 
-              is linked to a real, verified person — creating the 
-              <span className="font-medium"> oversight</span> and <span className="font-medium">accountability</span> that 
-              regulators, enterprises, and society need.
-            </p>
+          <div className="relative max-w-2xl mb-10">
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-x8-gold via-x8-gold/80 to-x8-gold/40 rounded-full" />
+            <div className="pl-6">
+              <p className="text-xl md:text-2xl text-x8-dark leading-relaxed font-light">
+                <span className="text-x8-gold font-semibold">X8 Identity</span> ensures every AI action 
+                is linked to a real, verified person — creating the 
+                <span className="font-semibold"> oversight</span> and <span className="font-semibold">accountability</span> that 
+                regulators, enterprises, and society need.
+              </p>
+            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4">

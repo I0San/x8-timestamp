@@ -32,7 +32,6 @@ const staticEntries: AuditEntry[] = [
 ]
 
 const rowHeight = 60
-const totalHeight = staticEntries.length * rowHeight
 const animationDuration = staticEntries.length * 4
 
 export function AuditTrailSection() {

@@ -15,7 +15,7 @@ export function TimestampForm({ onSuccess }: TimestampFormProps) {
   const { file, hash, isHashing, error: hashError, processFile, reset: resetFile } = useFileHash()
   const { fee, isLoading: feeLoading } = useTimestampFee()
   const { exists, isLoading: existsLoading } = useHashExists(hash || undefined)
-  const { register, txHash, isPending, isConfirming, isSuccess, error: txError, reset: resetTx } = useRegisterTimestamp()
+  const { register, txHash, isPending, isConfirming, isSuccess, isReverted, error: txError, reset: resetTx } = useRegisterTimestamp()
   
   const [metadata, setMetadata] = useState('')
   const [step, setStep] = useState<'upload' | 'confirm' | 'pending' | 'success'>('upload')
@@ -196,10 +196,12 @@ export function TimestampForm({ onSuccess }: TimestampFormProps) {
             </div>
           </div>
           
-          {txError && (
+          {(txError || isReverted) && (
             <div className="mt-4 p-4 bg-red-50 border border-red-200">
               <p className="text-sm text-red-700">
-                {txError.message || 'Transaction failed. Please try again.'}
+                {isReverted 
+                  ? 'Transaction was reverted by the blockchain. Please try again.'
+                  : txError?.message || 'Transaction failed. Please try again.'}
               </p>
             </div>
           )}

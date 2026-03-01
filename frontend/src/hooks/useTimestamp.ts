@@ -4,8 +4,14 @@ import { TIMESTAMP_REGISTRY_ADDRESS, TIMESTAMP_REGISTRY_ABI } from '../lib/contr
 export function useRegisterTimestamp() {
   const { writeContract, data: hash, isPending, error, reset } = useWriteContract()
   
-  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({
+  const { 
+    isLoading: isConfirming, 
+    isSuccess,
+    data: receipt,
+    error: receiptError,
+  } = useWaitForTransactionReceipt({
     hash,
+    confirmations: 1,
   })
   
   const register = (documentHash: `0x${string}`, metadata: string, fee: bigint) => {
@@ -23,8 +29,10 @@ export function useRegisterTimestamp() {
     txHash: hash,
     isPending,
     isConfirming,
-    isSuccess,
-    error,
+    isSuccess: isSuccess && receipt?.status === 'success',
+    isReverted: isSuccess && receipt?.status === 'reverted',
+    error: error || receiptError,
+    receipt,
     reset,
   }
 }

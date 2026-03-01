@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 
@@ -10,6 +11,7 @@ const navItems = [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -39,12 +41,48 @@ export function Layout({ children }: { children: React.ReactNode }) {
               ))}
             </nav>
           </div>
-          <ConnectButton 
-            showBalance={false}
-            chainStatus="icon"
-            accountStatus="address"
-          />
+          <div className="flex items-center gap-4">
+            <ConnectButton 
+              showBalance={false}
+              chainStatus="icon"
+              accountStatus="address"
+            />
+            <button 
+              className="md:hidden p-2 text-x8-dark"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-x8-border">
+            <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
+              {navItems.map(item => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm font-extrabold tracking-wide transition-colors ${
+                    location.pathname === item.path
+                      ? 'text-x8-gold'
+                      : 'text-x8-gray hover:text-x8-dark'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
       </header>
       
       <main className="flex-1 bg-x8-gray-light">

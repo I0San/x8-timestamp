@@ -1,28 +1,51 @@
 import { useState, useEffect } from 'react'
 
 const navItems = [
+  { href: '#home', label: 'HOME' },
   { href: '#features', label: 'FEATURES' },
   { href: '#ai-agents', label: 'AI AGENTS' },
-  { href: '#compliance', label: 'COMPLIANCE' },
   { href: '#how-it-works', label: 'HOW IT WORKS' },
 ]
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('#home')
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
+      
+      const sections = navItems.filter(item => item.href !== '#home').map(item => item.href.slice(1))
+      let currentSection = '#home'
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 150 && rect.bottom > 150) {
+            currentSection = `#${sectionId}`
+            break
+          }
+        }
+      }
+      
+      setActiveSection(currentSection)
     }
+    
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
     setMobileMenuOpen(false)
   }
@@ -40,16 +63,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 alt="X8 AG" 
                 className="h-10 w-auto"
               />
-              <span className="hidden sm:inline-block text-sm font-semibold text-x8-dark tracking-wide">
-                IDENTITY
-              </span>
             </a>
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map(item => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm font-extrabold tracking-wide text-x8-gray hover:text-x8-dark transition-colors"
+                  className={`text-sm font-extrabold tracking-wide transition-colors ${
+                    activeSection === item.href
+                      ? 'text-x8-gold'
+                      : 'text-x8-gray hover:text-x8-dark'
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -93,7 +117,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-sm font-extrabold tracking-wide text-x8-gray hover:text-x8-dark transition-colors text-left"
+                  className={`text-sm font-extrabold tracking-wide transition-colors text-left ${
+                    activeSection === item.href
+                      ? 'text-x8-gold'
+                      : 'text-x8-gray hover:text-x8-dark'
+                  }`}
                 >
                   {item.label}
                 </button>

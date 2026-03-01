@@ -17,8 +17,8 @@ export function generateCertificatePDF(data: CertificateData): void {
   const pageWidth = doc.internal.pageSize.getWidth()
   
   // X8 Design System Colors
-  const x8Gold = { r: 197, g: 160, b: 41 }  // #c5a029
-  const x8Dark = { r: 35, g: 31, b: 32 }    // #231f20
+  const x8Gold = { r: 219, g: 194, b: 125 }  // #dbc27d
+  const x8Dark = { r: 35, g: 31, b: 32 }     // #231f20
   
   // Header with gold gradient effect
   doc.setFillColor(x8Gold.r, x8Gold.g, x8Gold.b)

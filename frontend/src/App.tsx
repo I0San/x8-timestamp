@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit'
 import '@rainbow-me/rainbowkit/styles.css'
 
 import { config } from './lib/wagmi'
@@ -14,11 +14,17 @@ import { ValidatorPage } from './pages/Validator'
 
 const queryClient = new QueryClient()
 
+const x8Theme = lightTheme({
+  accentColor: '#dbc27d',
+  accentColorForeground: '#231f20',
+  borderRadius: 'medium',
+})
+
 function App() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
+        <RainbowKitProvider theme={x8Theme}>
           <BrowserRouter>
             <Layout>
               <Routes>

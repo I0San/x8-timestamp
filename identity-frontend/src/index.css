@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-x8-dark antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-x8-gold text-white hover:bg-x8-gold-dark active:bg-x8-gold-dark border border-x8-gold;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-x8-dark border border-x8-border hover:border-x8-dark hover:bg-x8-gray-light;
+  }
+  
+  .btn-outline {
+    @apply text-x8-dark border border-x8-border hover:border-x8-gold hover:text-x8-gold bg-white;
+  }
+  
+  .btn-ghost {
+    @apply text-x8-dark hover:text-x8-gold hover:bg-primary-50 border border-transparent;
+  }
+  
+  .card {
+    @apply bg-white border border-x8-border p-6 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply bg-white border border-x8-border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-x8-gold/10 hover:border-x8-gold hover:-translate-y-1;
+  }
+  
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm border border-x8-border/50 p-6 transition-all duration-300;
+  }
+  
+  .card-dark {
+    @apply bg-x8-dark text-white border border-x8-dark p-6 transition-all duration-300;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2.5 border border-x8-border bg-white focus:ring-1 focus:ring-x8-gold focus:border-x8-gold outline-none transition-all text-x8-dark placeholder:text-x8-gray;
+  }
+  
+  .section-title {
+    @apply text-lg font-semibold text-x8-dark tracking-tight;
+  }
+  
+  .page-title {
+    @apply text-2xl font-semibold text-x8-dark tracking-tight;
+  }
+  
+  .gold-highlight {
+    @apply text-x8-gold font-medium;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-x8-gold to-x8-gold-dark bg-clip-text text-transparent;
+  }
+  
+  .section-label {
+    @apply text-sm font-semibold tracking-widest text-x8-gold mb-3 uppercase;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold text-x8-dark tracking-tight;
+  }
+  
+  .feature-icon {
+    @apply w-14 h-14 bg-gradient-to-br from-primary-50 to-primary-100 border border-primary-200 flex items-center justify-center transition-transform duration-300 group-hover:scale-110;
+  }
+  
+  .stat-number {
+    @apply text-4xl md:text-5xl font-bold text-x8-gold tracking-tight;
+  }
+  
+  .stat-label {
+    @apply text-sm text-x8-gray mt-2 font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

@@ -24,8 +24,7 @@ interface Connection {
 export function BlockchainParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particlesRef = useRef<Particle[]>([])
-  const connectionsRef = useRef<Connection[]>([])
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
   const timeRef = useRef(0)
 
   const goldColor = { r: 219, g: 194, b: 125 }

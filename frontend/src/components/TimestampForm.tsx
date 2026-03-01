@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAccount } from 'wagmi'
 import { formatEther } from 'viem'
 import { FileUpload } from './FileUpload'
@@ -85,20 +86,23 @@ export function TimestampForm({ onSuccess }: TimestampFormProps) {
               href={`https://sepolia.etherscan.io/tx/${txHash}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-mono text-x8-gold hover:underline break-all"
+              className="text-sm font-mono text-x8-gold hover:underline break-all inline-flex items-center gap-1"
             >
               {formatHash(txHash, 12)}
+              <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
         </div>
         
         <div className="flex gap-3 justify-center">
-          <a
-            href={`/certificate/${hash}`}
+          <Link
+            to={`/certificate/${hash}`}
             className="btn btn-primary"
           >
             View Certificate
-          </a>
+          </Link>
           <button onClick={handleReset} className="btn btn-outline">
             Timestamp Another
           </button>
@@ -158,12 +162,12 @@ export function TimestampForm({ onSuccess }: TimestampFormProps) {
           <p className="text-sm text-x8-gray mt-1">
             This document has already been registered on the blockchain.
           </p>
-          <a
-            href={hash ? `/certificate/${hash}` : '#'}
+          <Link
+            to={`/certificate/${hash}`}
             className="text-sm text-x8-gold hover:underline mt-2 inline-block"
           >
             View existing certificate
-          </a>
+          </Link>
         </div>
       )}
       

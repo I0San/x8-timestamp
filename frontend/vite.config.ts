@@ -12,10 +12,4 @@ export default defineConfig({
   define: {
     global: 'globalThis',
   },
-  server: {
-    historyApiFallback: true,
-  },
-  preview: {
-    historyApiFallback: true,
-  },
 })

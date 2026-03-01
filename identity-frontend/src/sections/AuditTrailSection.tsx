@@ -32,6 +32,7 @@ const staticEntries: AuditEntry[] = [
 ]
 
 const rowHeight = 60
+const cardHeight = 140
 const animationDuration = staticEntries.length * 4
 
 export function AuditTrailSection() {
@@ -63,8 +64,9 @@ export function AuditTrailSection() {
         </div>
 
         <div className="relative">
+          {/* Desktop: Table rows */}
           <div 
-            className="relative bg-white/[0.02] backdrop-blur-sm overflow-hidden"
+            className="hidden md:block relative bg-white/[0.02] backdrop-blur-sm overflow-hidden"
             style={{
               maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
@@ -80,16 +82,15 @@ export function AuditTrailSection() {
               {[...entries, ...entries].map((entry, idx) => (
                 <div
                   key={`${entry.id}-${idx}`}
-                  className="grid md:grid-cols-[140px_1fr_180px_140px_100px] gap-2 md:gap-4 px-4 md:px-6 py-3.5 border-b border-white/5"
+                  className="grid grid-cols-[140px_1fr_180px_140px_100px] gap-4 px-6 py-3.5 border-b border-white/5"
                   style={{ height: `${rowHeight}px` }}
                 >
-                  <div className="flex items-center gap-2 md:gap-0">
-                    <span className="md:hidden text-[10px] font-medium text-white/40 uppercase">Time:</span>
+                  <div className="flex items-center">
                     <span className="font-mono text-sm text-white/70">{entry.timestamp}</span>
                   </div>
                   
-                  <div className="flex items-start gap-3 col-span-full md:col-span-1">
-                    <ChainIcon className="w-4 h-4 text-x8-gold flex-shrink-0 mt-0.5 hidden md:block" />
+                  <div className="flex items-start gap-3">
+                    <ChainIcon className="w-4 h-4 text-x8-gold flex-shrink-0 mt-0.5" />
                     <div className="flex-1 min-w-0">
                       <span className={`text-xs font-semibold ${agentTypes[entry.agentType].color}`}>
                         {entry.agentName}
@@ -98,18 +99,15 @@ export function AuditTrailSection() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-2 md:gap-0">
-                    <span className="md:hidden text-[10px] font-medium text-white/40 uppercase">Owner:</span>
+                  <div className="flex items-center">
                     <span className="text-sm text-white/60 truncate">{entry.owner}</span>
                   </div>
                   
-                  <div className="flex items-center gap-2 md:gap-0">
-                    <span className="md:hidden text-[10px] font-medium text-white/40 uppercase">TX:</span>
+                  <div className="flex items-center">
                     <span className="font-mono text-xs text-white/40">{entry.txHash}</span>
                   </div>
                   
-                  <div className="flex items-center justify-start md:justify-end gap-2">
-                    <span className="md:hidden text-[10px] font-medium text-white/40 uppercase">Status:</span>
+                  <div className="flex items-center justify-end">
                     {entry.status === 'confirmed' ? (
                       <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded text-xs font-medium text-emerald-400">
                         <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
@@ -121,6 +119,61 @@ export function AuditTrailSection() {
                         Pending
                       </span>
                     )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: Card list */}
+          <div 
+            className="md:hidden relative overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+              height: `${cardHeight * 3}px`,
+            }}
+          >
+            <div 
+              className="animate-scroll"
+              style={{ 
+                animation: `scrollUpMobile ${animationDuration}s linear infinite`,
+              }}
+            >
+              {[...entries, ...entries].map((entry, idx) => (
+                <div
+                  key={`mobile-${entry.id}-${idx}`}
+                  className="bg-white/[0.03] border border-white/10 rounded-lg p-4 mb-3 mx-1"
+                  style={{ height: `${cardHeight - 12}px` }}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex items-center gap-2">
+                      <ChainIcon className="w-4 h-4 text-x8-gold flex-shrink-0" />
+                      <span className={`text-sm font-semibold ${agentTypes[entry.agentType].color}`}>
+                        {entry.agentName}
+                      </span>
+                    </div>
+                    {entry.status === 'confirmed' ? (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-emerald-500/20 border border-emerald-500/30 rounded text-[10px] font-medium text-emerald-400">
+                        <span className="w-1 h-1 bg-emerald-400 rounded-full" />
+                        Confirmed
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-amber-500/20 border border-amber-500/30 rounded text-[10px] font-medium text-amber-400">
+                        <span className="w-1 h-1 bg-amber-400 rounded-full animate-pulse" />
+                        Pending
+                      </span>
+                    )}
+                  </div>
+                  
+                  <p className="text-sm text-white mb-3 line-clamp-2">{entry.action}</p>
+                  
+                  <div className="flex items-center justify-between text-xs text-white/50">
+                    <span className="truncate max-w-[45%]">{entry.owner}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono">{entry.txHash}</span>
+                      <span className="font-mono text-white/70">{entry.timestamp}</span>
+                    </div>
                   </div>
                 </div>
               ))}

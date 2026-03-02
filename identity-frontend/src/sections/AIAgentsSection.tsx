@@ -40,7 +40,7 @@ export function AIAgentsSection() {
             <span className="text-xs font-semibold tracking-wide text-x8-gold uppercase">Industry First</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-            Our  <span className="text-x8-gold">Dashboard</span>
+            AI Agents<br className="md:hidden" /> <span className="text-x8-gold">Oversight Dashboard</span>
           </h2>
         </div>
         

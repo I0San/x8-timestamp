@@ -29,10 +29,9 @@ export function CTASection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-10 mt-10 border-t border-white/10">
               <a 
                 href="mailto:info@x8ag.io"
-                className="btn bg-x8-gold text-x8-dark hover:bg-x8-gold-light px-10 py-4 text-base font-bold shadow-lg shadow-x8-gold/20 hover:shadow-xl hover:shadow-x8-gold/30 transition-all inline-flex items-center justify-center gap-2 group"
+                className="btn bg-x8-gold text-x8-dark hover:bg-x8-gold-light px-10 py-4 text-base font-bold shadow-lg shadow-x8-gold/20 hover:shadow-xl hover:shadow-x8-gold/30 transition-all inline-flex items-center justify-center"
               >
                 Schedule a Demo
-                <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a 
                 href="#pricing"
@@ -114,9 +113,9 @@ export function CTASection() {
                 </li>
               ))}
             </ul>
-            <a href="https://docs.x8.ch" target="_blank" rel="noopener noreferrer" className="text-x8-gold font-semibold text-sm hover:underline inline-flex items-center gap-1">
-              View Docs <ArrowRightIcon className="w-4 h-4" />
-            </a>
+            <span className="text-x8-gold font-semibold text-sm">
+              Coming soon
+            </span>
           </div>
           </div>
         </div>

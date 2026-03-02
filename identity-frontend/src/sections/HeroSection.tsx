@@ -25,7 +25,7 @@ export function HeroSection() {
               <BotIcon className="w-4 h-4 text-x8-gold" />
             </span>
             <span className="text-sm font-semibold tracking-wide text-x8-dark">
-              Fully Swiss Regulated Identity Solutions
+              Swiss Regulated Identity Solutions
             </span>
           </div>
           

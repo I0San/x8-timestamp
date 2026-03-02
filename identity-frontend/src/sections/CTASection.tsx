@@ -38,7 +38,7 @@ export function CTASection() {
                 href="#pricing"
                 className="btn bg-transparent text-white border border-white/30 hover:border-white px-10 py-4 text-base font-bold inline-flex items-center justify-center"
               >
-                Tiers
+                See Plans
               </a>
             </div>
             

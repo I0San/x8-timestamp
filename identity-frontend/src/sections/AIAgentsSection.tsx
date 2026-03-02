@@ -1,80 +1,32 @@
 import { useState } from 'react'
-import { BotIcon, UserGroupIcon, AuditIcon, ChainIcon, ShieldIcon, NetworkIcon } from '../components/Icons'
+import { BotIcon, UserGroupIcon, ChainIcon, NetworkIcon } from '../components/Icons'
 
 export function AIAgentsSection() {
   const [activeTab, setActiveTab] = useState<'owner' | 'agent' | 'audit'>('owner')
 
   return (
-    <section id="ai-agents" className="py-24 md:py-32 bg-x8-dark text-white overflow-hidden">
+    <section id="ai-agents" className="py-16 md:py-20 bg-x8-dark text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-8">
-              <span className="w-2 h-2 bg-x8-gold rounded-full animate-pulse" />
-              <span className="text-sm font-semibold tracking-wide text-x8-gold uppercase">
-                Industry First
-              </span>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight leading-tight">
-              Compliant Identity<br />
-              <span className="text-x8-gold">for AI Agents</span>
-            </h2>
-            
-            <p className="text-lg text-white/70 leading-relaxed mb-8">
-              In the age of autonomous AI, accountability is everything. Our AI Agent DID 
-              framework creates a compliant audit trail for every action an AI takes on 
-              behalf of its owner.
-            </p>
-            
-            <div className="space-y-4 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center flex-shrink-0">
-                  <UserGroupIcon className="w-5 h-5 text-x8-gold" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Owner-Linked Identity</h4>
-                  <p className="text-sm text-white/60">Every AI agent DID is cryptographically linked to a verified human or organization identity, establishing clear responsibility chains.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center flex-shrink-0">
-                  <AuditIcon className="w-5 h-5 text-x8-gold" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Immutable Audit Trail</h4>
-                  <p className="text-sm text-white/60">All AI agent actions are timestamped and recorded, creating a tamper-proof log for regulatory compliance and dispute resolution.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center flex-shrink-0">
-                  <ShieldIcon className="w-5 h-5 text-x8-gold" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Scoped Permissions</h4>
-                  <p className="text-sm text-white/60">Define exactly what your AI agents can and cannot do with granular permission controls and verifiable capability statements.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-3">
-              <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
-                FINMA Compliant
-              </span>
-              <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
-                EU AI Act Ready
-              </span>
-              <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
-                SOC 2 Type II
-              </span>
-            </div>
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full mb-8">
+            <span className="w-2 h-2 bg-x8-gold rounded-full animate-pulse" />
+            <span className="text-sm font-semibold tracking-wide text-x8-gold uppercase">
+              Industry First
+            </span>
           </div>
           
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight leading-tight">
+            Compliant Identity <span className="text-x8-gold">for AI Agents</span>
+          </h2>
+          
+          <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
+            In the age of autonomous AI, accountability is everything. Our AI Agent DID 
+            framework creates a compliant audit trail for every action an AI takes on 
+            behalf of its owner.
+          </p>
+        </div>
+        
+        <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-x8-gold/20 via-transparent to-x8-gold/10 blur-3xl opacity-50" />
             
@@ -140,7 +92,7 @@ export function AIAgentsSection() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-white/60">Compliance Status</span>
-                      <span className="text-sm font-semibold text-green-400">FINMA Approved</span>
+                      <span className="text-sm font-semibold text-green-400">Audit Ready</span>
                     </div>
                   </div>
                 </div>
@@ -215,37 +167,20 @@ export function AIAgentsSection() {
               )}
             </div>
           </div>
-        </div>
-        
-        <div className="mt-20 md:mt-28 grid md:grid-cols-3 gap-8 text-center">
-          <div className="p-8 bg-white/5 border border-white/10">
-            <div className="w-16 h-16 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl font-bold text-x8-gold">1</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-3">Onboard & Verify</h3>
-            <p className="text-sm text-white/60">
-              Complete KYC verification to establish your verified owner identity. This becomes the root of trust for all your AI agents.
-            </p>
-          </div>
           
-          <div className="p-8 bg-white/5 border border-white/10">
-            <div className="w-16 h-16 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl font-bold text-x8-gold">2</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-3">Register Agents</h3>
-            <p className="text-sm text-white/60">
-              Create DIDs for each AI agent with defined scopes, permissions, and capability statements. Each agent inherits your compliance status.
-            </p>
-          </div>
-          
-          <div className="p-8 bg-white/5 border border-white/10">
-            <div className="w-16 h-16 bg-x8-gold/20 border border-x8-gold/30 flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl font-bold text-x8-gold">3</span>
-            </div>
-            <h3 className="text-lg font-semibold mb-3">Operate & Audit</h3>
-            <p className="text-sm text-white/60">
-              AI agents operate autonomously while every action is logged, timestamped, and linked to your identity for complete accountability.
-            </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
+              Swiss Regulation Ready
+            </span>
+            <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
+              EU AI Act Ready
+            </span>
+            <span className="inline-flex items-center px-4 py-2 bg-white/5 border border-white/10 text-sm font-medium">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2" />
+              SOC 2 Type II
+            </span>
           </div>
         </div>
       </div>

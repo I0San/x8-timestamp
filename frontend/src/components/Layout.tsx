@@ -134,7 +134,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </div>
             <div className="flex items-center gap-6 text-xs text-white/40">
-              <a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Privacy Policy</a>
+              <a href="https://x8ag.io/privacy-policy/" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Privacy Policy</a>
               <a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Terms of Service</a>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { ArrowRightIcon } from '../components/Icons'
 
 export function CTASection() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="cta" className="py-24 md:py-32 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative bg-x8-dark text-white p-12 md:p-20 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">

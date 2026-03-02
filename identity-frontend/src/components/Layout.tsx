@@ -81,16 +81,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <a 
-              href="https://x8ag.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden sm:block btn btn-outline"
-            >
-              Login to Portal
-            </a>
             <button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => scrollToSection('#cta')}
               className="btn btn-primary"
             >
               Get Started
@@ -126,14 +118,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   {item.label}
                 </button>
               ))}
-              <a 
-                href="https://x8ag.io" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-sm font-extrabold tracking-wide text-x8-gold"
-              >
-                LOGIN TO PORTAL
-              </a>
             </nav>
           </div>
         )}
@@ -216,9 +200,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </span>
             </div>
             <div className="flex items-center gap-6 text-xs text-white/40">
-              <a href="#" className="hover:text-x8-gold transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-x8-gold transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-x8-gold transition-colors">Cookie Policy</a>
+              <a href="https://x8ag.io/privacy-policy/" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Privacy Policy</a>
+              <a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

@@ -82,7 +82,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <div className="flex items-center gap-4">
             <a 
-              href="https://portal.x8.ch" 
+              href="https://x8ag.io" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden sm:block btn btn-outline"
@@ -127,7 +127,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </button>
               ))}
               <a 
-                href="https://portal.x8.ch" 
+                href="https://x8ag.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-sm font-extrabold tracking-wide text-x8-gold"
@@ -170,11 +170,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
             
             <div>
-              <h4 className="text-sm font-semibold tracking-wide mb-6 uppercase">Solutions</h4>
+              <h4 className="text-sm font-semibold tracking-wide mb-6 uppercase">X8 Ecosystem</h4>
               <ul className="space-y-3 text-white/60 text-sm">
-                <li><a href="#features" className="hover:text-x8-gold transition-colors">Digital Identity</a></li>
-                <li><a href="#ai-agents" className="hover:text-x8-gold transition-colors">AI Agent DIDs</a></li>
-                <li><a href="https://timestamping.x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Timestamping</a></li>
+                <li><a href="#features" className="hover:text-x8-gold transition-colors">AI Agent Identity</a></li>
+                <li><a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">X8 Stablecoins</a></li>
+                <li><a href="https://timestamping.x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Blockchain Timestamping</a></li>
+                <li><a href="https://timestamping.x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Certificates & Provenance</a></li>
               </ul>
             </div>
             

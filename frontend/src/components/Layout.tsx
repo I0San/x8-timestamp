@@ -89,25 +89,53 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       
-      <footer className="bg-white border-t border-x8-border py-8">
+      <footer className="bg-x8-dark text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
               <img 
-                src="/logo-black.svg" 
+                src="/logo-white.svg" 
                 alt="X8 AG" 
-                className="h-6 w-auto opacity-70"
+                className="h-8 w-auto mb-4"
               />
-              <span className="text-xs text-x8-gray">Swiss Precision in Digital Trust</span>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Swiss-compliant blockchain timestamping and certificates of authenticity.
+              </p>
             </div>
-            <div className="flex items-center gap-6">
-              <span className="inline-flex items-center gap-2 text-xs text-x8-gray">
+            
+            <div>
+              <h4 className="text-sm font-semibold tracking-wide mb-4 uppercase">X8 Ecosystem</h4>
+              <ul className="space-y-2 text-white/60 text-sm">
+                <li><a href="https://identity.x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">AI Agent Identity</a></li>
+                <li><a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">X8 Stablecoins</a></li>
+                <li><span className="text-x8-gold">Blockchain Timestamping</span></li>
+                <li><Link to="/validate" className="hover:text-x8-gold transition-colors">Certificates & Provenance</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-sm font-semibold tracking-wide mb-4 uppercase">Company</h4>
+              <ul className="space-y-2 text-white/60 text-sm">
+                <li><a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">About X8</a></li>
+                <li><a href="https://x8ag.io/news/" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Blog</a></li>
+                <li><a href="mailto:info@x8ag.io" className="hover:text-x8-gold transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="inline-flex items-center gap-2 text-xs text-white/40">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 Sepolia Testnet
               </span>
-              <p className="text-xs text-x8-gray">
-                © {new Date().getFullYear()} X8 AG
-              </p>
+              <span className="text-xs text-white/40">
+                © {new Date().getFullYear()} X8 AG. All rights reserved.
+              </span>
+            </div>
+            <div className="flex items-center gap-6 text-xs text-white/40">
+              <a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Privacy Policy</a>
+              <a href="https://x8ag.io" target="_blank" rel="noopener noreferrer" className="hover:text-x8-gold transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

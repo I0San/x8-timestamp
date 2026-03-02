@@ -28,9 +28,9 @@ const frameworkFeatures = [
   },
   {
     icon: ShieldIcon,
-    title: 'Permission Controls',
-    description: 'Define granular permissions and boundaries for what each agent can do. Enforce guardrails at the identity layer.',
-    highlights: ['Granular Scopes', 'Action Limits', 'Revocation Support']
+    title: 'On-Chain Compliance',
+    description: 'For X8 stablecoin transactions, enforce compliance rules directly on-chain. Define transfer conditions, approval workflows, and regulatory guardrails with automatic enforcement.',
+    highlights: ['X8 Stablecoins', 'Compliant Transfers', 'On-Chain Enforcement']
   },
   {
     icon: ChainIcon,

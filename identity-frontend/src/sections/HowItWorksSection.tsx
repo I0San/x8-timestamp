@@ -36,7 +36,7 @@ export function HowItWorksSection() {
   }
 
   return (
-    <section id="how-it-works" className="py-24 md:py-32 bg-white">
+    <section id="how-it-works" className="pt-24 md:pt-32 pb-6 md:pb-8 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-20">
           <p className="section-label">Implementation Path</p>
@@ -86,6 +86,7 @@ export function HowItWorksSection() {
           </div>
         </div>
         
+{/* Enterprise Deployment section - commented out
         <div className="mt-20 bg-gradient-to-r from-primary-50 via-white to-primary-50 border border-x8-border p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -135,6 +136,7 @@ export function HowItWorksSection() {
             </div>
           </div>
         </div>
+*/}
       </div>
     </section>
   )

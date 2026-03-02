@@ -21,12 +21,12 @@ export function CTASection() {
               <span className="text-x8-gold">You Stay Accountable.</span>
             </h2>
             
-            <p className="text-lg text-white/70 mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
               Deploy AI agents across your organization with the confidence that every action 
               is tracked, every decision is auditable, and every responsibility is clear.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-10 mt-10 border-t border-white/10">
               <a 
                 href="mailto:info@x8ag.io"
                 className="btn bg-x8-gold text-x8-dark hover:bg-x8-gold-light px-10 py-4 text-base font-bold shadow-lg shadow-x8-gold/20 hover:shadow-xl hover:shadow-x8-gold/30 transition-all inline-flex items-center justify-center gap-2 group"
@@ -35,33 +35,21 @@ export function CTASection() {
                 <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a 
-                href="https://docs.x8.ch/identity"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#pricing"
                 className="btn bg-transparent text-white border border-white/30 hover:border-white px-10 py-4 text-base font-bold inline-flex items-center justify-center"
               >
-                Read Documentation
+                Tiers
               </a>
             </div>
             
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-x8-gold mb-1">Free</div>
-                <div className="text-sm text-white/60">Initial Consultation</div>
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-x8-gold mb-1">&lt;48h</div>
-                <div className="text-sm text-white/60">Response Time</div>
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-x8-gold mb-1">POC</div>
-                <div className="text-sm text-white/60">Available</div>
-              </div>
-            </div>
           </div>
         </div>
         
-        <div className="mt-20 grid md:grid-cols-3 gap-8">
+        <div id="pricing" className="mt-20 scroll-mt-24">
+          <h2 className="text-3xl md:text-4xl font-semibold text-x8-dark text-center mb-12">
+            Choose Your Plan
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
           <div className="border border-x8-border p-8 hover:border-x8-gold transition-colors">
             <div className="text-x8-gold text-sm font-semibold mb-4 uppercase tracking-wide">For Enterprises</div>
             <h3 className="text-xl font-semibold text-x8-dark mb-3">Full Identity Suite</h3>
@@ -129,6 +117,7 @@ export function CTASection() {
             <a href="https://docs.x8.ch" target="_blank" rel="noopener noreferrer" className="text-x8-gold font-semibold text-sm hover:underline inline-flex items-center gap-1">
               View Docs <ArrowRightIcon className="w-4 h-4" />
             </a>
+          </div>
           </div>
         </div>
       </div>

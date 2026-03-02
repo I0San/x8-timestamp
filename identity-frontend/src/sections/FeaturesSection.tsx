@@ -48,7 +48,7 @@ const frameworkFeatures = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24 md:py-32 bg-white">
+    <section id="features" className="py-24 md:py-32 bg-white scroll-mt-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-20">
           <p className="section-label">The Framework for AI Accountability</p>
@@ -57,7 +57,7 @@ export function FeaturesSection() {
           </h2>
           <p className="text-lg text-x8-gray max-w-3xl mx-auto">
             Your organization is deploying AI agents to automate processes, serve customers, and execute decisions. 
-            Our framework ensures every action is <span className="text-x8-dark font-medium">traceable</span>, 
+            Our tool ensures every action is <span className="text-x8-dark font-medium">traceable</span>, 
             <span className="text-x8-dark font-medium"> accountable</span>, and 
             <span className="text-x8-dark font-medium"> compliant</span>.
           </p>

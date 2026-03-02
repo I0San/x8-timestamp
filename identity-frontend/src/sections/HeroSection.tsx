@@ -54,10 +54,10 @@ export function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => scrollToSection('#features')}
               className="btn btn-primary px-10 py-4 text-base font-bold shadow-lg shadow-x8-gold/20 hover:shadow-xl hover:shadow-x8-gold/30 transition-all inline-flex items-center justify-center gap-2 group"
             >
-              Deploy Your Agent Framework
+              Deploy Your AI Agent Monitoring
               <ArrowRightIcon className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
             <button 

@@ -47,7 +47,7 @@ export function AIAgentsSection() {
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-to-r from-x8-gold/10 via-transparent to-x8-gold/5 blur-2xl opacity-60" />
           
-          <div className="relative bg-white/[0.03] border border-white/10 backdrop-blur-sm min-h-[460px] sm:min-h-[450px] md:min-h-[450px] flex flex-col">
+          <div className="relative bg-white/[0.03] border border-white/10 backdrop-blur-sm min-h-[460px] sm:min-h-[470px] md:min-h-[480px] flex flex-col">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-3 sm:px-4 py-2 border-b border-white/10 bg-white/5 gap-2">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1.5">

@@ -28,15 +28,8 @@ const steps = [
 ]
 
 export function HowItWorksSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <section id="how-it-works" className="py-24 md:py-32 bg-white">
+    <section id="how-it-works" className="pt-24 md:pt-32 pb-6 md:pb-8 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-20">
           <p className="section-label">Implementation Path</p>
@@ -83,56 +76,6 @@ export function HowItWorksSection() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-        
-        <div className="mt-20 bg-gradient-to-r from-primary-50 via-white to-primary-50 border border-x8-border p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-semibold text-x8-dark mb-4">
-                Enterprise Deployment
-              </h3>
-              <p className="text-x8-gray leading-relaxed mb-6">
-                Deploying AI agents at scale? Our enterprise team provides dedicated support, 
-                custom integration with your AI orchestration platforms, and compliance consulting.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {['Dedicated solutions architect', 'Integration with LangChain, AutoGPT, etc.', 'Custom compliance workflows', 'SLA guarantees', 'On-call support'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-sm text-x8-dark">
-                    <svg className="w-5 h-5 text-x8-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <button 
-                onClick={() => scrollToSection('#contact')}
-                className="btn btn-primary inline-flex items-center gap-2"
-              >
-                Talk to Our Team
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white border border-x8-border p-6 text-center">
-                <div className="text-3xl font-bold text-x8-gold mb-2">&lt;1 week</div>
-                <div className="text-sm text-x8-gray">First Agent Live</div>
-              </div>
-              <div className="bg-white border border-x8-border p-6 text-center">
-                <div className="text-3xl font-bold text-x8-gold mb-2">99.9%</div>
-                <div className="text-sm text-x8-gray">Uptime SLA</div>
-              </div>
-              <div className="bg-white border border-x8-border p-6 text-center">
-                <div className="text-3xl font-bold text-x8-gold mb-2">24/7</div>
-                <div className="text-sm text-x8-gray">Support</div>
-              </div>
-              <div className="bg-white border border-x8-border p-6 text-center">
-                <div className="text-3xl font-bold text-x8-gold mb-2">∞</div>
-                <div className="text-sm text-x8-gray">Agents Supported</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
